@@ -81,5 +81,12 @@ Includes a small, customizable React component library built with [DaisyUI](http
    ```bash
    git clone https://github.com/israel20162/Ai-Resume-Builder.git
    cd Ai-Resume-Builder
+   ```
+2. **Install Dependencies:**
+   ```bash  
    npm install
+   ```
+3. **Start development server:**
+   ```bash  
+   npm run install
    ```
