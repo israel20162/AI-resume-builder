@@ -4,7 +4,7 @@ import Layout from "./components/Layout";
 import Login from "./pages/Login";
 import Register from "./pages/Register";
 import NotFound from "./pages/NotFound";
-import Home from "./pages/Home";
+import Home from "./pages/home";
 
 function App() {
 
