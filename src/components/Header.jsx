@@ -1,6 +1,8 @@
-import  { useState, useEffect } from "react";
-import { Link, useLocation } from "react-router";
-import { Menu, X, Sun, Moon } from "lucide-react";
+import  { useState } from "react";
+import { Link } from "react-router";
+import { Menu, X, } from "lucide-react";
+import { ThemeToggle } from "./ui/ThemeToggle";
+import { Button } from "./ui/Button";
 
 export default function Header() {
     const [isOpen, setIsOpen] = useState(false);
@@ -21,32 +23,42 @@ export default function Header() {
                         <Link to="/dashboard" className="text-gray-700 dark:text-gray-300 hover:text-blue-600">
                             Dashboard
                         </Link>
-                        <Link to="/resume" className="text-gray-700 dark:text-gray-300 hover:text-blue-600">
-                            Resume Builder
-                        </Link>
-                        <Link to="/jobs" className="text-gray-700 dark:text-gray-300 hover:text-blue-600">
-                            Job Search
-                        </Link>
+                       
                     </div>
 
                     {/* Right Side: Dark Mode & Mobile Menu Button */}
-                    <div className="flex items-center space-x-4">
-                        {/* Dark Mode Toggle */}
-                        <button
-                            onClick={() => setDarkMode(!darkMode)}
-                            className="p-2 rounded-md text-gray-900 dark:text-white hover:bg-gray-200 dark:hover:bg-gray-700"
-                        >
-                            {darkMode ? <Sun size={20} /> : <Moon size={20} />}
-                        </button>
+                    <div className="flex items-center gap-4">
+                        <div className="sm:flex sm:gap-4">
+                            <Link
+                                className="hidden md:block rounded-md bg-slate-600 px-5 py-2.5 text-sm font-medium text-white transition hover:bg-slate-700 dark:hover:bg-slate-500"
+                                to="/login"
+                            >
+                                Login
+                            </Link>
 
-                        {/* Mobile Menu Button */}
-                        <button
-                            onClick={() => setIsOpen(!isOpen)}
-                            className="md:hidden p-2 rounded-md text-gray-900 dark:text-white hover:bg-gray-200 dark:hover:bg-gray-700"
-                        >
-                            {isOpen ? <X size={24} /> : <Menu size={24} />}
-                        </button>
-                    </div>
+                            <Link
+                                className="hidden rounded-md bg-gray-100 px-5 py-2.5 text-sm font-medium text-slate-600 transition hover:text-slate-600/75 sm:block dark:bg-gray-800 dark:text-white dark:hover:text-white/75"
+                                to="/register"
+                            >
+                                Register
+                            </Link>
+                        </div>
+                        <div className="flex items-center space-x-4">
+                            {/* Dark Mode Toggle */}
+                            <ThemeToggle/>
+                           
+
+                            {/* Mobile Menu Button */}
+                            <button
+                                onClick={() => setIsOpen(!isOpen)}
+                                // variant='ghost'
+                                className="md:hidden p-2 text-black transition dark:text-white bg-transparent border-0 shadow-none "
+                            >
+                                {isOpen ? <X size={24} /> : <Menu size={24} />}
+                            </button>
+                        </div>
+                        </div>
+                    
                 </div>
             </div>
 
@@ -56,12 +68,22 @@ export default function Header() {
                     <Link to="/dashboard" className="block px-4 py-2 text-gray-700 dark:text-gray-300 hover:bg-gray-100 dark:hover:bg-gray-800">
                         Dashboard
                     </Link>
-                    <Link to="/resume" className="block px-4 py-2 text-gray-700 dark:text-gray-300 hover:bg-gray-100 dark:hover:bg-gray-800">
-                        Resume Builder
-                    </Link>
-                    <Link to="/jobs" className="block px-4 py-2 text-gray-700 dark:text-gray-300 hover:bg-gray-100 dark:hover:bg-gray-800">
-                        Job Search
-                    </Link>
+                  
+                    <div className="flex gap-4 m-4 p-4">
+                        <Link
+                            className="  md:block rounded-md bg-slate-600 px-5 py-2.5 text-sm font-medium text-white transition hover:bg-slate-700 dark:hover:bg-slate-500"
+                            to="/login"
+                        >
+                            Login
+                        </Link>
+
+                        <Link
+                            className=" rounded-md bg-gray-100 px-5 py-2.5 text-sm font-medium text-slate-600 transition hover:text-slate-600/75 sm:block dark:bg-gray-800 dark:text-white dark:hover:text-white/75"
+                            to="/register"
+                        >
+                            Register
+                        </Link>
+                    </div>
                 </div>
             )}
         </nav>
