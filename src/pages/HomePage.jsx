@@ -1,5 +1,5 @@
 import { Sparkles } from "lucide-react";
-import { Button } from "./components/ui/Button";
+import { Button } from "../components/ui/Button";
 import { Link } from "react-router";
 
 export default function Home() {

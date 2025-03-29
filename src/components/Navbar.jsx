@@ -4,7 +4,7 @@ import { Menu, X, } from "lucide-react";
 import { ThemeToggle } from "./ui/ThemeToggle";
 import { Button } from "./ui/Button";
 
-export default function Header() {
+export default function Navbar() {
     const [isOpen, setIsOpen] = useState(false);
     const [darkMode, setDarkMode] = useState(
         localStorage.getItem("theme") === "dark"
