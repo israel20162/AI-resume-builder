@@ -4,11 +4,9 @@ import { Menu, X, } from "lucide-react";
 import { ThemeToggle } from "./ui/ThemeToggle";
 
 
-export default function Navbar() {
+export default function Header() {
     const [isOpen, setIsOpen] = useState(false);
-    const [darkMode, setDarkMode] = useState(
-        localStorage.getItem("theme") === "dark"
-    );
+   
     return (
         <nav className="bg-white dark:bg-gray-900 shadow-md">
             <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
