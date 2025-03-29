@@ -45,7 +45,12 @@ A comprehensive AI-powered resume builder designed to help users optimize and en
   - [React Router](https://reactrouter.com/) for client-side routing.
   - [Lucide React](https://lucide.dev/) for scalable icons.
 
-  # DaisyUI Component Library
+  - **Backend:**
+  - Node.js with express and mongodb
+
+  
+
+ # DaisyUI Component Library
 
 Includes a small, customizable React component library built with [DaisyUI](https://daisyui.com/) and [Tailwind CSS](https://tailwindcss.com/). This library provides reusable UI components such as **Input**, **Button**, and **Card** with dark mode support and customizable props for a consistent, theme-friendly design.
 
@@ -63,10 +68,9 @@ Includes a small, customizable React component library built with [DaisyUI](http
 - **Easy Integration:**  
   Use the provided components to quickly build modern, responsive UIs.
 
-  
 
-- **Backend:**
-  - Node.js with express and mongodb
+
+
 
 <!-- - **AI Integration:**
   - (Mention any AI or machine learning services/libraries used for resume parsing and job scraping.) -->
