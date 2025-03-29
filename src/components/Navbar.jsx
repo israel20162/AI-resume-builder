@@ -2,7 +2,7 @@ import  { useState } from "react";
 import { Link } from "react-router";
 import { Menu, X, } from "lucide-react";
 import { ThemeToggle } from "./ui/ThemeToggle";
-import { Button } from "./ui/Button";
+
 
 export default function Navbar() {
     const [isOpen, setIsOpen] = useState(false);
