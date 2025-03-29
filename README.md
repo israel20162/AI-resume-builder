@@ -45,10 +45,10 @@ A comprehensive AI-powered resume builder designed to help users optimize and en
   - [React Router](https://reactrouter.com/) for client-side routing.
   - [Lucide React](https://lucide.dev/) for scalable icons.
 
-  - **Backend:**
+- **Backend:**
   - Node.js with express and mongodb
 
-  
+
 
  # DaisyUI Component Library
 
