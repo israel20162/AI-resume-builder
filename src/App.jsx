@@ -1,9 +1,10 @@
 import { BrowserRouter, Routes, Route } from "react-router";
 import Layout from "./components/Layout";
-import Home from "./pages/home";
+
 import Login from "./pages/Login";
 import Register from "./pages/Register";
 import NotFound from "./pages/NotFound";
+import Home from "./pages/Home";
 
 function App() {
 
