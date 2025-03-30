@@ -22,7 +22,7 @@ export default function Home() {
                             </div>
                             <div className="flex flex-col gap-2 min-[400px]:flex-row">
                                 <Link className="bg-background" size="lg">
-                                    <Button className="text-white" size="lg">
+                                    <Button className="text-white shadow-none" size="lg">
                                         View Demo
                                     </Button>
 

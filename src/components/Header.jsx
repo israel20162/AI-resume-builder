@@ -48,7 +48,7 @@ export default function Header() {
 
                             {/* Mobile Menu Button */}
                             <button
-                                onClick={() => setIsOpen(!isOpen)}
+                                onClick={() => setIsOpen(prev => !prev)}
                                 // variant='ghost'
                                 className="md:hidden p-2 text-black transition dark:text-white bg-transparent border-0 shadow-none "
                             >

@@ -22,11 +22,18 @@ export const Button = ({
   onClick,
   children,
 }) => {
+  const makeImportant = (classes) =>
+    classes
+      .split(" ")
+      .filter(Boolean)
+      .map((cls) => (cls.startsWith("!") ? cls : `!${cls}`))
+      .join(" ");
+  const importantClasses = makeImportant(className);
   return (
     <button
       type={type}
       disabled={disabled}
-      className={`btn btn-${variant} btn-${size}  border-0 bg-teal-500 hover:bg-teal-600 disabled:opacity-50 dark:bg-teal-800 hover:dark:bg-teal-700 dark:text-white  !${className}`}
+      className={`${importantClasses} btn btn-${variant} btn-${size} border-0 `}
       onClick={onClick}
     >
       {children}

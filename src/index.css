@@ -17,6 +17,10 @@
   -moz-osx-font-smoothing: grayscale;
 }
 
+@theme {
+  --color-theme-500: oklch(0.704 0.14 182.503);
+}
+
 button {
   cursor: pointer;
 }
