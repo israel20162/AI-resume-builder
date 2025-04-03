@@ -3,7 +3,7 @@ import Navbar from './Header'
 
 export default function Layout() {
     return (
-        <div className="flex text-black h-screen bg-white dark:bg-gray-900 " >
+        <div className="flex   text-black h-screen bg-white dark:bg-gray-900 " >
             {/* Main Content Area */}
             <div className="flex flex-col flex-1">
                 <Navbar />

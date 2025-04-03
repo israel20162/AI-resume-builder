@@ -5,6 +5,8 @@ import Register from "./pages/Register";
 import NotFound from "./pages/NotFound";
 import Home from "./pages/HomePage.jsx";
 import Dashboard from "./pages/Dashboard";
+import DashboardLayout from "./components/DashboardLayout";
+import ResumeBuilder from "./pages/ResumeBuilder";
 
 function App() {
 
@@ -16,7 +18,12 @@ function App() {
             <Route index element={<Home />} />
             <Route path="login" element={<Login />} />
             <Route path="register" element={<Register />} />
-            <Route path="dashboard" element={<Dashboard />} />
+
+            <Route path="*" element={<NotFound />} />
+          </Route>
+          <Route path="dashboard" element={<DashboardLayout />}>
+            <Route index element={<Dashboard />} />
+            <Route path="resume-builder" element={<ResumeBuilder />} />
             <Route path="*" element={<NotFound />} />
           </Route>
         </Routes>

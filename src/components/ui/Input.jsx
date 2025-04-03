@@ -25,21 +25,20 @@ export const Input = ({
     className,
     placeholder,
     value,
-    onValueChange,
     variant = "primary",
     size = "md",
     fullWidth = false,
+    ...props
+    
 }) => {
     return (
         <input
-            type={type}
-            id={id}
-            name={name}
+            {...props}
+            value={value}
+            placeholder={placeholder}      
             className={`input input-bordered input-${variant} input-${size} ${fullWidth ? "w-full" : ""
                 } ${className} bg-gray-100 dark:bg-gray-700 dark:text-white focus:outline-none focus:border-teal-500`}
-            placeholder={placeholder}
-            value={value}
-            onChange={(e) => onValueChange(e.target.value)}
         />
+          
     );
 };

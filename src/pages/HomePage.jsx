@@ -1,8 +1,39 @@
 import { Sparkles } from "lucide-react";
 import { Button } from "../components/ui/Button";
 import { Link } from "react-router";
-
+import { Upload } from 'lucide-react';
+import { useRef, useState } from 'react';
 export default function Home() {
+    const fileInputRef = useRef(null);
+    const [selectedFile, setSelectedFile] = useState(null);
+
+    const handleButtonClick = () => {
+        fileInputRef.current.click();
+    };
+
+    const handleFileChange = (event) => {
+        const file = event.target.files[0];
+        setSelectedFile(file);
+        console.log(file);
+    };
+
+    const [formData, setFormData] = useState({
+        fullName: "",
+        email: "",
+        phone: "",
+        experience: "",
+        skills: "",
+    });
+    const handleChange = (e) => {
+        setFormData({ ...formData, [e.target.name]: e.target.value });
+    };
+
+    const handleSubmit = (e) => {
+        e.preventDefault();
+        console.log("Form Submitted", formData);
+        // Here you can send data to the backend
+    };
+
     return (
         <div className="relative overflow-hidden bg-background flex flex-1 flex-col ">
 
@@ -22,7 +53,7 @@ export default function Home() {
                             </div>
                             <div className="flex flex-col gap-2 min-[400px]:flex-row">
                                 <Link className="bg-background" size="lg">
-                                    <Button className="text-white shadow-none" size="lg">
+                                    <Button className="text-white bg-teal-500 dark:bg-teal-700" size="lg">
                                         View Demo
                                     </Button>
 
@@ -63,6 +94,29 @@ export default function Home() {
                             </div>
                         </div>
                     </div>
+                </div>
+            </section>
+
+            <section className="dark:text-white">
+                <div className="hero min-h-[50vh] ">
+                    <div className="hero-content text-center">
+                        <div className="max-w-md">
+                            <h1 className="text-5xl font-bold">Build Your Perfect Resume with AI</h1>
+                            <p className="py-6">Upload your existing resume and let our AI analyze and improve it.</p>
+                            <input
+                                type="file"
+                                accept="application/pdf, application/vnd.openxmlformats-officedocument.wordprocessingml.document"
+                                onChange={handleFileChange}
+                                ref={fileInputRef}
+                                className="hidden"
+                            />
+                            <Button className="bg-teal-500 hover:bg-teal-600 disabled:opacity-50 dark:bg-teal-800 hover:dark:bg-teal-700 shadow-none" onClick={handleButtonClick}>
+                                <Upload className="mr-2" /> Upload Resume
+                            </Button>
+                            {selectedFile && <p className="mt-4">Selected file: {selectedFile.name}</p>}
+                        </div>
+                    </div>
+
                 </div>
             </section>
 

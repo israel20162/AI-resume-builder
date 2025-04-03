@@ -15,17 +15,17 @@ import { Link, useLocation } from 'react-router';
  *
  * @returns {JSX.Element} The customized DaisyUI button component.
  */
-export const SidebarItem = ({ href = '#', icon, label, onClick, className = "" }) => {
+export const SidebarItem = ({ href = '', icon, label, onClick, className = "" }) => {
     const location = useLocation();
-    const isActive = href.includes(location.pathname)
+    const isActive = location.pathname === href
     return (
         <li>
             <Link
                 to={href}
                 onClick={onClick}
-                className={`${className} flex items-center py-4 px-2 rounded-md transition-colors duration-200 ${isActive
-                    ? 'bg-teal-500 dark:bg-teal-700 text-primary-content'
-                    : ' bg-slate-100 hover:bg-base-200'
+                className={`${className} flex items-center py-4 px-2 rounded-md transition-colors duration-200
+                 ${isActive ? 'bg-teal-500 dark:bg-teal-700 text-primary-content'
+                    : 'dark:text-white hover:bg-slate-200  dark:hover:bg-base-200'
                     }`}
             >
                 {icon && <span className="mr-2">{icon}</span>}
