@@ -64,7 +64,7 @@ export default function ResumeBuilder() {
     return (
         <>
             {/* Top bar with actions */}
-            <div className=" sm:px-6 flex justify-between items-center flex-wrap gap-2 dark:text-white">
+            <div className="sm:px-6 flex justify-between items-center flex-wrap gap-2 dark:text-white">
                 <div className="flex items-center space-x-2">
                     <h1 className="text-lg font-medium text-gray-900">{currentResume.title}</h1>
                     <span className="text-sm text-gray-500 dark:text-gray-300">
@@ -73,7 +73,7 @@ export default function ResumeBuilder() {
                 </div>
                 <div className="flex items-center space-x-2">
                     <Button
-                        className="inline-flex items-center px-3 !py-2  dark:bg-white dark:!text-gray-700 leading-4  "
+                        className="inline-flex items-center px-3 !py-2 dark:bg-white dark:!text-gray-700 leading-4"
                         onClick={() => { }}
                     >
                         <Download className="h-4 w-4 mr-2" />
@@ -92,16 +92,16 @@ export default function ResumeBuilder() {
             </div>
 
             {/* Main content area */}
-            <div className="flex-1 flex mt-2 bg-gray-50 dark:bg-transparent dark:text-white">
-                {/* Left sidebar - Section Navigation */}
-                <div className="w-64  border-r border-gray-200/30 bg-white dark:bg-transparent dark:text-white overflow-y-auto flex flex-col">
+            <div className="flex flex-col lg:flex-row mt-2 bg-gray-50 dark:bg-transparent dark:text-white">
+                {/* Left sidebar - Section Navigation (visible on md and above) */}
+                <div className=" md:block md:w-64 border-r border-gray-200/30 bg-white dark:bg-transparent dark:text-white overflow-y-auto flex flex-col">
                     <nav className="flex-1 px-2 py-4 space-y-1">
                         {navItems.map((item) => (
                             <button
                                 key={item.id}
                                 className={`${activeSection === item.id
-                                    ? 'bg-gray-200  text-gray-900  dark:bg-gray-700'
-                                    : 'text-gray-600  hover:bg-gray-50 hover:text-gray-900'
+                                        ? 'bg-gray-200 text-gray-900 dark:bg-gray-700'
+                                        : 'text-gray-600 hover:bg-gray-50 hover:text-gray-900'
                                     } group dark:text-white flex items-center px-3 py-3 text-sm font-medium rounded-md w-full`}
                                 onClick={() => setActiveSection(item.id)}
                             >
@@ -119,13 +119,13 @@ export default function ResumeBuilder() {
                 </div>
 
                 {/* Main form area */}
-                <div className="flex-1 overflow-y-auto p-6">
-                    <div className="max-w-3xl mx-auto">
+                <div className="flex-1 overflow-y-auto p-1 md:p-6">
+                    <div className=" max-w-7xl md:max-w-3xl mx-auto">
                         {renderActiveSection()}
                     </div>
                 </div>
 
-                {/* Right sidebar - Preview */}
+                {/* Right sidebar - Preview (visible on lg and above) */}
                 <div className="hidden lg:block lg:w-96 border-l border-gray-200 bg-white overflow-y-auto">
                     <div className="p-4 border-b border-gray-200 bg-gray-50">
                         <h3 className="text-sm font-medium text-gray-500">Live Preview</h3>
@@ -135,9 +135,8 @@ export default function ResumeBuilder() {
                     </div>
                 </div>
             </div>
-         
-
         </>
+
 
     );
 }

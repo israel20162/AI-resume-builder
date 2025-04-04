@@ -25,14 +25,14 @@ export default function Sidebar() {
         },
     ];
     return (
-        <aside className="drawer dark:text-white w-0"> {/* drawer is a daisyui class, used for responsive sidebar menus */}
+        <aside className="drawer dark:text-white w-0 flex items-center"> {/* drawer is a daisyui class, used for responsive sidebar menus */}
             <input id="sidebar-drawer" type="checkbox" className="drawer-toggle" />
             <div className="drawer-content">
                 {/* Page content here */}
                 <label htmlFor="sidebar-drawer" className="drawer-button">
                     <button
                         onClick={() => setIsOpen(prev => !prev)}
-                        className=" text-black transition dark:text-white bg-transparent border-0 shadow-none m-4"
+                        className=" text-black transition dark:text-white bg-transparent border-0 shadow-none m-0 md:m-4"
                     >
                         {isOpen ? <X size={24} /> : <Menu size={24} />}
                     </button>
